@@ -754,4 +754,65 @@ footer {
     .social-links {
         justify-content: center;
     }
+}
+
+/* Brand Carousel */
+.brand-carousel {
+    background-color: #ffffff;
+    padding: 3rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-container {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    animation: carousel 5s linear infinite;
+    width: fit-content;
+}
+
+.carousel-slide {
+    flex: 0 0 200px;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.carousel-slide:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes carousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/*
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-slide {
+        flex: 0 0 150px;
+        padding: 0 1rem;
+    }
 } 

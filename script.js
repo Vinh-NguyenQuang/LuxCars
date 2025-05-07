@@ -1,4 +1,10 @@
+// Mobile Navigation Toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', function(event) {
@@ -134,4 +140,23 @@ const animateOnScroll = () => {
 };
 
 window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll); 
+window.addEventListener('load', animateOnScroll);
+
+// Brand Carousel
+const carouselTrack = document.querySelector('.carousel-track');
+
+// Pause animation on hover
+carouselTrack.addEventListener('mouseenter', () => {
+    carouselTrack.style.animationPlayState = 'paused';
+});
+
+carouselTrack.addEventListener('mouseleave', () => {
+    carouselTrack.style.animationPlayState = 'running';
+});
+
+// Clone slides for infinite scroll
+const slides = document.querySelectorAll('.carousel-slide');
+slides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    carouselTrack.appendChild(clone);
+}); 
