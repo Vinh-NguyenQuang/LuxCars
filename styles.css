@@ -49,32 +49,74 @@ nav {
     display: flex;
     list-style: none;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 4px;
 }
 
 .nav-links a:hover {
     color: #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
 }
 
-.book-now-btn {
+.nav-links .login-btn,
+.nav-links .signup-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-links .login-btn {
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.nav-links .login-btn:hover {
     background-color: #007bff;
     color: white;
-    padding: 0.8rem 1.5rem;
+}
+
+.nav-links .signup-btn {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.nav-links .signup-btn:hover {
+    background-color: transparent;
+    color: #007bff;
+}
+
+/* Floating Book Now Button */
+.book-now-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 2rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    z-index: 1000;
 }
 
 .book-now-btn:hover {
     background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
 }
 
 .hamburger {
@@ -175,7 +217,7 @@ nav {
     }
 }
 
-/* Responsive styles */
+/* Responsive styles for navigation */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -192,6 +234,17 @@ nav {
 
     .nav-links.active {
         display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .book-now-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.8rem 1.5rem;
     }
 
     .hamburger {
