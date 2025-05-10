@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Car Inventory - LuxCars</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="inventory.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html">LuxCars</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="inventory.html" class="active">Inventory</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <button class="book-now-btn">Book Now</button>
+    </nav>
+
+    <!-- Inventory Page Content -->
+    <div class="inventory-page">
+        <!-- Filters Sidebar -->
+        <aside class="filters-sidebar">
+            <h2>Filter Cars</h2>
+            
+            <div class="filter-group">
+                <h3>Make</h3>
+                <select multiple>
+                    <option value="mercedes">Mercedes-Benz</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="porsche">Porsche</option>
+                    <option value="ferrari">Ferrari</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <h3>Model Year</h3>
+                <select>
+                    <option value="">Any Year</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <h3>Price Range</h3>
+                <div class="price-range">
+                    <input type="range" min="0" max="500000" step="10000" value="250000">
+                    <div class="price-inputs">
+                        <input type="number" placeholder="Min" min="0" max="500000">
+                        <span>to</span>
+                        <input type="number" placeholder="Max" min="0" max="500000">
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3>Transmission</h3>
+                <select>
+                    <option value="">Any</option>
+                    <option value="automatic">Automatic</option>
+                    <option value="manual">Manual</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <h3>Fuel Type</h3>
+                <select>
+                    <option value="">Any</option>
+                    <option value="petrol">Petrol</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="electric">Electric</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+            </div>
+
+            <button class="reset-btn">Reset Filters</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="inventory-content">
+            <div class="inventory-header">
+                <h1>Available Cars</h1>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="cars-grid">
+                <!-- Car Card 1 -->
+                <div class="car-card">
+                    <img src="images/mercedes-s-class.jpg" alt="Mercedes-Benz S-Class">
+                    <div class="car-info">
+                        <h3>Mercedes-Benz S-Class</h3>
+                        <p>2024 • Automatic • Petrol</p>
+                        <p>Luxury Sedan with Premium Features</p>
+                        <div class="car-price">$120,000</div>
+                        <button class="book-now-btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Car Card 2 -->
+                <div class="car-card">
+                    <img src="images/bmw-7-series.jpg" alt="BMW 7 Series">
+                    <div class="car-info">
+                        <h3>BMW 7 Series</h3>
+                        <p>2024 • Automatic • Hybrid</p>
+                        <p>Executive Luxury with Advanced Technology</p>
+                        <div class="car-price">$115,000</div>
+                        <button class="book-now-btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Car Card 3 -->
+                <div class="car-card">
+                    <img src="images/audi-a8.jpg" alt="Audi A8">
+                    <div class="car-info">
+                        <h3>Audi A8</h3>
+                        <p>2024 • Automatic • Petrol</p>
+                        <p>Sophisticated Luxury with Quattro AWD</p>
+                        <div class="car-price">$110,000</div>
+                        <button class="book-now-btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Add more car cards as needed -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="page-numbers">
+                    <span class="page-number active">1</span>
+                    <span class="page-number">2</span>
+                    <span class="page-number">3</span>
+                    <span class="page-number">4</span>
+                    <span class="page-number">5</span>
+                </div>
+                <button class="pagination-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

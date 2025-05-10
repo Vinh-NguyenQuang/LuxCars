@@ -159,4 +159,130 @@ const slides = document.querySelectorAll('.carousel-slide');
 slides.forEach(slide => {
     const clone = slide.cloneNode(true);
     carouselTrack.appendChild(clone);
+});
+
+// View Toggle Functionality
+const viewButtons = document.querySelectorAll('.view-btn');
+const carsGrid = document.querySelector('.cars-grid');
+
+viewButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        viewButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Toggle grid/list view
+        if (button.dataset.view === 'list') {
+            carsGrid.classList.add('list-view');
+        } else {
+            carsGrid.classList.remove('list-view');
+        }
+    });
+});
+
+// Price Range Slider
+const priceRange = document.querySelector('.price-range input[type="range"]');
+const minPriceInput = document.querySelector('.price-inputs input:first-child');
+const maxPriceInput = document.querySelector('.price-inputs input:last-child');
+
+// Update price inputs when slider changes
+priceRange.addEventListener('input', () => {
+    const value = priceRange.value;
+    maxPriceInput.value = value;
+});
+
+// Update slider when price inputs change
+minPriceInput.addEventListener('change', () => {
+    const min = parseInt(minPriceInput.value);
+    const max = parseInt(maxPriceInput.value);
+    if (min > max) {
+        minPriceInput.value = max;
+    }
+});
+
+maxPriceInput.addEventListener('change', () => {
+    const min = parseInt(minPriceInput.value);
+    const max = parseInt(maxPriceInput.value);
+    if (max < min) {
+        maxPriceInput.value = min;
+    }
+    priceRange.value = max;
+});
+
+// Reset Filters
+const resetBtn = document.querySelector('.reset-btn');
+const filterSelects = document.querySelectorAll('.filter-group select');
+
+resetBtn.addEventListener('click', () => {
+    // Reset all select elements
+    filterSelects.forEach(select => {
+        if (select.multiple) {
+            Array.from(select.options).forEach(option => option.selected = false);
+        } else {
+            select.selectedIndex = 0;
+        }
+    });
+
+    // Reset price range
+    priceRange.value = 250000;
+    minPriceInput.value = '';
+    maxPriceInput.value = '';
+});
+
+// Pagination
+const pageNumbers = document.querySelectorAll('.page-number');
+const prevBtn = document.querySelector('.pagination-btn:first-child');
+const nextBtn = document.querySelector('.pagination-btn:last-child');
+
+pageNumbers.forEach(number => {
+    number.addEventListener('click', () => {
+        // Remove active class from all numbers
+        pageNumbers.forEach(num => num.classList.remove('active'));
+        // Add active class to clicked number
+        number.classList.add('active');
+    });
+});
+
+prevBtn.addEventListener('click', () => {
+    const activePage = document.querySelector('.page-number.active');
+    const prevPage = activePage.previousElementSibling;
+    if (prevPage && prevPage.classList.contains('page-number')) {
+        activePage.classList.remove('active');
+        prevPage.classList.add('active');
+    }
+});
+
+nextBtn.addEventListener('click', () => {
+    const activePage = document.querySelector('.page-number.active');
+    const nextPage = activePage.nextElementSibling;
+    if (nextPage && nextPage.classList.contains('page-number')) {
+        activePage.classList.remove('active');
+        nextPage.classList.add('active');
+    }
+});
+
+// Book Now Button Animation
+const bookNowBtns = document.querySelectorAll('.book-now-btn');
+
+bookNowBtns.forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+        btn.style.transform = 'scale(1.05)';
+    });
+
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'scale(1)';
+    });
+});
+
+// Filter Functionality
+const filterGroups = document.querySelectorAll('.filter-group select');
+
+filterGroups.forEach(select => {
+    select.addEventListener('change', () => {
+        // Here you would typically make an API call to filter the cars
+        // For now, we'll just log the selected values
+        const selectedValues = Array.from(select.selectedOptions).map(option => option.value);
+        console.log(`${select.previousElementSibling.textContent}:`, selectedValues);
+    });
 }); 
