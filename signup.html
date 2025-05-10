@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - LuxCars</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background: #f8f9fa; }
+        .auth-container {
+            max-width: 400px;
+            margin: 100px auto;
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+        .auth-container h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #222;
+        }
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .auth-form input {
+            padding: 0.9rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .auth-form button {
+            padding: 0.9rem;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .auth-form button:hover {
+            background: #0056b3;
+        }
+        .auth-links {
+            text-align: center;
+            margin-top: 1.2rem;
+        }
+        .auth-links a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html">LuxCars</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <button class="book-now-btn">Book Now</button>
+        <a href="login.html" class="auth-btn">Log In</a>
+        <a href="signup.html" class="auth-btn signup">Sign Up</a>
+    </nav>
+    <div class="auth-container">
+        <h2>Sign Up</h2>
+        <form class="auth-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="auth-links">
+            <span>Already have an account? <a href="login.html">Log In</a></span>
+        </div>
+    </div>
+</body>
+</html> 
