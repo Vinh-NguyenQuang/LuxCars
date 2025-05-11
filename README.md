@@ -46,3 +46,4 @@ As the project grows, consider refactoring the embedded styles into a separate C
 - CSS3
 - JavaScript
 - Font Awesome for icons
+- MongoDB
