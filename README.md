@@ -1,7 +1,7 @@
 # LuxCars
 
 Create a luxury and sports cars dealership website.
-
+ 
 ## Features Implemented
 1. **Showcase Inventory**  
    Display luxury, vintage, and exotic cars with high-quality images and details.
